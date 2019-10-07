@@ -17,6 +17,20 @@ int main()
      cout<<"\nYour choice (A/Q): ";
      cin>>input;
      input = tolower(input);
+     if (input == 'a')
+     {
+        cout << "What is the item?" << endl;
+        cin.ignore();
+        if (numItems < 5)
+        {
+            getline(cin, list[numItems]);
+            numItems++;
+        }
+        else
+        {
+            cout << "You'll need a bigger list!" << endl;
+        }
+     }
   }
   while (input != 'q');
 
