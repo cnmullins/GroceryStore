@@ -8,6 +8,7 @@ int main()
   string list[5]; //array of 5 strings
   int numItems = 0;
   char input;
+  string addItem;
   do
   {
      cout<<"\n==GROCERY LIST MANAGER==";
@@ -21,9 +22,10 @@ int main()
      {
         cout << "What is the item?" << endl;
         cin.ignore();
+        getline(cin, addItem);
         if (numItems < 5)
         {
-            getline(cin, list[numItems]);
+            list[numItems] = addItem;
             numItems++;
         }
         else
@@ -33,6 +35,12 @@ int main()
      }
   }
   while (input != 'q');
+
+  cout << "==ITEMS TO BUY==" << endl;
+  for (int i = 0; i < 5; i++)
+  {
+    cout << i + 1 << " " << list[i] << endl;
+  }
 
   return 0;
 }
